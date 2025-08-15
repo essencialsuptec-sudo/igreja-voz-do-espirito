@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Devocionais / Devotionals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .language-toggle {
+            float: right;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 200px;
+            border-radius: 10px;
+            display: block;
+            margin: 20px auto;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+    </style>
+    <script>
+        function toggleLanguage() {
+            var pt = document.getElementById('pt');
+            var en = document.getElementById('en');
+            if (pt.style.display === 'none') {
+                pt.style.display = 'block';
+                en.style.display = 'none';
+            } else {
+                pt.style.display = 'none';
+                en.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <button class="language-toggle" onclick="toggleLanguage()">🌐 Alternar idioma / Switch language</button>
+        <img src="UploadedImage0.jpg" alt="Pastora">
+        <div id="pt" class="section">
+            <h1>Devocionais</h1>
+            <p>Reflexões espirituais para fortalecer sua fé diariamente.</p>
+        </div>
+        <div id="en" class="section" style="display:none;">
+            <h1>Devotionals</h1>
+            <p>Spiritual reflections to strengthen your faith daily.</p>
+        </div>
+    </div>
+</body>
+</html>

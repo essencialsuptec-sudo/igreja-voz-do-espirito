@@ -1,32 +1,58 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <title>Igreja Voz do Espírito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-        header { background: #4a90e2; color: white; padding: 20px; text-align: center; }
-        main { padding: 20px; animation: fadeIn 1s ease-in; }
-        footer { background: #eee; text-align: center; padding: 10px; margin-top: 20px; }
-        img { max-width: 100%; height: auto; border-radius: 10px; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        body.light-mode { background-color: #f9f9f9; color: #333; font-family: Arial, sans-serif; transition: background 0.3s, color 0.3s; }
+        body.dark-mode { background-color: #222; color: #eee; font-family: Arial, sans-serif; transition: background 0.3s, color 0.3s; }
+        header { text-align: center; padding: 20px; }
+        nav { text-align: center; margin: 20px; }
+        nav a { margin: 0 15px; text-decoration: none; color: inherit; font-weight: bold; }
+        .pastora-img { display: block; margin: 20px auto; max-width: 300px; border-radius: 10px; }
+        .language-toggle, .theme-toggle { position: fixed; top: 10px; right: 10px; margin-left: 10px; }
+        .theme-toggle { right: 120px; }
+        section { max-width: 800px; margin: auto; padding: 20px; }
     </style>
 </head>
-<body>
+<body class="light-mode">
+    <button class="theme-toggle" onclick="toggleTheme()">🌗</button>
+    <button class="language-toggle" onclick="toggleLanguage()">EN/PT</button>
+
     <header>
-        <h1>Igreja Voz do Espírito</h1>
+        <h1 id="title">Bem-vindo à Igreja Voz do Espírito</h1>
+        <img src="UploadedImage0.jpg" alt="Pastora" class="pastora-img">
     </header>
-    <section style="text-align:center; margin: 20px;">
-        <img src="UploadedImage0.jpg" alt="Imagem da Pastora">
-        <p style="font-style:italic; color:#555;">Imagem da Pastora - Igreja Voz do Espírito</p>
+
+    <nav>
+        <a href="devocionais.html" id="link-devocionais">Devocionais</a>
+        <a href="mensagens.html" id="link-mensagens">Mensagens</a>
+        <a href="videos.html" id="link-videos">Vídeos</a>
+    </nav>
+
+    <section>
+        <p id="intro">Somos uma comunidade dedicada à fé, ao amor e à inspiração divina. Explore nossos conteúdos e fortaleça sua caminhada espiritual.</p>
     </section>
-    <main>
-        <h2>Bem-vindo à nossa igreja</h2>
-        <p>Esta é a página inicial com layout moderno e minimalista.</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 Igreja Voz do Espírito</p>
-    </footer>
+
+    <script>
+        let isPortuguese = true;
+        function toggleLanguage() {
+            isPortuguese = !isPortuguese;
+            document.getElementById("title").textContent = isPortuguese ? "Bem-vindo à Igreja Voz do Espírito" : "Welcome to Voice of the Spirit Church";
+            document.getElementById("link-devocionais").textContent = isPortuguese ? "Devocionais" : "Devotionals";
+            document.getElementById("link-mensagens").textContent = isPortuguese ? "Mensagens" : "Messages";
+            document.getElementById("link-videos").textContent = isPortuguese ? "Vídeos" : "Videos";
+            document.getElementById("intro").textContent = isPortuguese ?
+                "Somos uma comunidade dedicada à fé, ao amor e à inspiração divina. Explore nossos conteúdos e fortaleça sua caminhada espiritual." :
+                "We are a community dedicated to faith, love, and divine inspiration. Explore our content and strengthen your spiritual journey.";
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle("light-mode");
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 </html>
