@@ -2,34 +2,51 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Devocionais / Devotionals</title>
+    <title>Devocionais - Igreja Voz do Espírito</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f9f9f9;
-            transition: background-color 0.5s, color 0.5s;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-        .language-toggle {
-            float: right;
-            margin-bottom: 20px;
+        header {
+            text-align: center;
+            margin-bottom: 30px;
         }
         img {
             max-width: 200px;
-            border-radius: 10px;
-            display: block;
-            margin: 20px auto;
+            border-radius: 50%;
         }
-        .section {
-            margin-bottom: 40px;
+        h1 {
+            font-size: 2em;
+            margin-top: 10px;
+        }
+        .devocionais {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .mensagem {
+            margin: 15px 0;
+            font-size: 1.2em;
+        }
+        .idioma {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
         }
     </style>
     <script>
-        function toggleLanguage() {
+        function alternarIdioma() {
             var pt = document.getElementById('pt');
             var en = document.getElementById('en');
             if (pt.style.display === 'none') {
@@ -43,16 +60,19 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <button class="language-toggle" onclick="toggleLanguage()">🌐 Alternar idioma / Switch language</button>
+    <header>
         <img src="UploadedImage0.jpg" alt="Pastora">
-        <div id="pt" class="section">
-            <h1>Devocionais</h1>
-            <p>Reflexões espirituais para fortalecer sua fé diariamente.</p>
+        <h1>Devocionais Diários</h1>
+        <div class="idioma">
+            <button onclick="alternarIdioma()">🌐 Alternar Idioma</button>
         </div>
-        <div id="en" class="section" style="display:none;">
-            <h1>Devotionals</h1>
-            <p>Spiritual reflections to strengthen your faith daily.</p>
+    </header>
+    <div class="devocionais">
+        <div id="pt">
+            <div class="mensagem">🕊️ "Confie no Senhor de todo o seu coração e não se apoie em seu próprio entendimento." – Provérbios 3:5</div><div class="mensagem">🌅 "A cada manhã, renove sua fé. Deus tem algo novo para você hoje."</div><div class="mensagem">🙏 "A oração é a ponte entre a sua fraqueza e o poder de Deus."</div><div class="mensagem">💡 "Mesmo nos dias escuros, a luz de Cristo brilha em você."</div><div class="mensagem">🌿 "A fé é como uma semente: plante com esperança e colherá milagres."</div>
+        </div>
+        <div id="en" style="display:none;">
+            <div class="mensagem">🕊️ "Trust in the Lord with all your heart and lean not on your own understanding." – Proverbs 3:5</div><div class="mensagem">🌅 "Each morning, renew your faith. God has something new for you today."</div><div class="mensagem">🙏 "Prayer is the bridge between your weakness and God's power."</div><div class="mensagem">💡 "Even in dark days, the light of Christ shines within you."</div><div class="mensagem">🌿 "Faith is like a seed: plant it with hope and you will reap miracles."</div>
         </div>
     </div>
 </body>
