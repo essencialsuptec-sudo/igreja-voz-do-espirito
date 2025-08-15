@@ -1,35 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Mensagens da Pastora / Messages from the Pastor</title>
+    <title>Mensagens da Pastora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f9f9f9;
-            transition: background-color 0.5s, color 0.5s;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: #6a1b9a;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
         .container {
-            max-width: 800px;
+            padding: 30px;
+            max-width: 900px;
             margin: auto;
         }
-        .language-toggle {
-            float: right;
-            margin-bottom: 20px;
+        .mensagem {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-left: 5px solid #6a1b9a;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        img {
-            max-width: 200px;
+        .mensagem p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .imagem-pastora {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .imagem-pastora img {
+            max-width: 250px;
             border-radius: 10px;
-            display: block;
-            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        .section {
-            margin-bottom: 40px;
+        .idioma {
+            text-align: right;
+            margin: 10px 20px;
+        }
+        .idioma button {
+            padding: 8px 12px;
+            background: #6a1b9a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
     <script>
-        function toggleLanguage() {
+        function alternarIdioma() {
             var pt = document.getElementById('pt');
             var en = document.getElementById('en');
             if (pt.style.display === 'none') {
@@ -43,16 +72,35 @@
     </script>
 </head>
 <body>
+    <header>
+        <h1>Mensagens da Pastora</h1>
+    </header>
+    <div class="idioma">
+        <button onclick="alternarIdioma()">Alternar Idioma / Switch Language</button>
+    </div>
     <div class="container">
-        <button class="language-toggle" onclick="toggleLanguage()">🌐 Alternar idioma / Switch language</button>
-        <img src="UploadedImage0.jpg" alt="Pastora">
-        <div id="pt" class="section">
-            <h1>Mensagens da Pastora</h1>
-            <p>Palavras inspiradoras e ensinamentos da nossa pastora.</p>
+        <div class="imagem-pastora">
+            <img src="UploadedImage0.jpg" alt="Imagem da Pastora">
         </div>
-        <div id="en" class="section" style="display:none;">
-            <h1>Messages from the Pastor</h1>
-            <p>Inspirational words and teachings from our pastor.</p>
+        <div id="pt">
+            <div class="mensagem"><p>“Deus não nos chama para sermos perfeitos, mas para sermos disponíveis. É na entrega que Ele opera milagres.”</p></div>
+            <div class="mensagem"><p>“A fé não é ausência de dúvidas, é a decisão de confiar mesmo quando não entendemos.”</p></div>
+            <div class="mensagem"><p>“Quando você ora, o céu se move. Nunca subestime o poder de uma oração sincera.”</p></div>
+            <div class="mensagem"><p>“O Espírito Santo é nosso conselheiro, consolador e guia. Ouça Sua voz e caminhe com confiança.”</p></div>
+            <div class="mensagem"><p>“Não importa o tamanho da tempestade, o nosso Deus continua sendo maior.”</p></div>
+            <div class="mensagem"><p>“A graça de Deus não apenas nos alcança, ela nos transforma.”</p></div>
+            <div class="mensagem"><p>“Seja luz onde houver escuridão. Você foi chamado para brilhar.”</p></div>
+            <div class="mensagem"><p>“A comunhão com Deus é o combustível da alma. Busque-o diariamente.”</p></div>
+        </div>
+        <div id="en" style="display:none;">
+            <div class="mensagem"><p>“God doesn't call us to be perfect, but to be available. It is in surrender that He works miracles.”</p></div>
+            <div class="mensagem"><p>“Faith is not the absence of doubt, it's the decision to trust even when we don't understand.”</p></div>
+            <div class="mensagem"><p>“When you pray, heaven moves. Never underestimate the power of a sincere prayer.”</p></div>
+            <div class="mensagem"><p>“The Holy Spirit is our counselor, comforter, and guide. Listen to His voice and walk with confidence.”</p></div>
+            <div class="mensagem"><p>“No matter the size of the storm, our God is still greater.”</p></div>
+            <div class="mensagem"><p>“God's grace not only reaches us, it transforms us.”</p></div>
+            <div class="mensagem"><p>“Be light where there is darkness. You were called to shine.”</p></div>
+            <div class="mensagem"><p>“Communion with God is the fuel of the soul. Seek Him daily.”</p></div>
         </div>
     </div>
 </body>
