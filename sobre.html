@@ -1,1 +1,79 @@
-<html><head><title>Sobre</title></head><body><h1>Sobre Nós</h1><p>Informações sobre a igreja.</p></body></html>
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre Nós</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        header {
+            background-color: #4B0082;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        section {
+            padding: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+        .icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #4B0082;
+        }
+        .pastora-img {
+            display: block;
+            margin: 20px auto;
+            max-width: 300px;
+            border-radius: 15px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+        .dark-mode header {
+            background-color: #222;
+        }
+        .dark-mode .icon {
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <header>
+        <h1><i class="fas fa-church icon"></i>Sobre a Igreja</h1>
+    </header>
+    <section>
+        <h2><i class="fas fa-star icon"></i>Nossa História</h2>
+        <p>A Igreja Voz do Espírito foi fundada com o propósito de levar a palavra de Deus a todos os cantos. Nossa missão é inspirar fé, esperança e amor.</p>
+        
+    </section>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
